@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import axios from "axios";
 import "./Slider.css";
+import Genres from "../Genres/Genres";
 
 export default function Slider() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -59,6 +60,7 @@ export default function Slider() {
           <p className="slider-description">
             {upcomingMovies[movieIndex]?.overview.slice(0, 130)}...
           </p>
+          <Genres genreIds={upcomingMovies[movieIndex]?.genre_ids} />
           <p>Release Date: {upcomingMovies[movieIndex]?.release_date}</p>
         </div>
       </div>

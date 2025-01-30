@@ -61,3 +61,7 @@
   font-size: 32px;
   font-weight: 300;
 }
+
+.genre-container {
+  display: flex;
+}
