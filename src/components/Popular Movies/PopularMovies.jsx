@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import MovieCard from "../MovieCard/MovieCard";
 
 function PopularMovies() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -21,7 +22,15 @@ function PopularMovies() {
     <div>
       <h3 className="popular-title">Popular Movies</h3>
       {popularMovies.map((movie) => (
-        <p>{movie.title}</p>
+        <MovieCard
+          key={movie?.id}
+          movie={movie}
+          height={"300px"}
+          width={"200px"}
+          cardStyle="popular-card"
+          radius={"16px"}
+          imgSrc={movie?.poster_path}
+        />
       ))}
     </div>
   );
